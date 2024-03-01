@@ -64,6 +64,122 @@ Take a look at the diagram on the right to explore the anatomy of a p5.js Sketch
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Canvas
+--------
+4 min
+Programming graphics with p5.js is a lot like drawing on graph paper, except the HTML <canvas> element is your paper! The <canvas> element is an HTML element that renders graphics created 
+with JavaScript’s Canvas API. As you can see in the diagram below, the <canvas> element can be used alongside other HTML elements on the web page.
+
+A gif displaying a canvas embedded in a webpage
+
+Utilizing the Canvas API behind the scenes, the p5.js library provides many built-in drawing functions that simplify drawing to the HTML <canvas> on the fly using JavaScript. The p5.js 
+library removes pesky nuances such as rendering context and introduces more familiar function names when drawing to the <canvas>.
+
+The p5.js library’s built-in createCanvas() function dynamically creates an empty HTML <canvas> element to the web page. The function takes two arguments: the width and height of the 
+canvas element in pixels.
+
+// Creates a canvas with the width of canvasWidth and the height of canvasHeight
+createCanvas(canvasWidth, canvasHeight);
+
+Once the createCanvas() function has been called, the canvas can be styled further using CSS to, for example, position the canvas at the center of the web page.
+
+If the createCanvas() function is not explicitly called, p5.js will automatically create an HTML <canvas> element that is 100 pixels wide and 100 pixels tall. If, for some reason, your 
+p5.js sketch does not require a canvas, explicitly call the noCanvas() function to stop p5.js from creating a canvas at the start of the program.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Call the createCanvas() function with a width of 400 pixels and a height of 400 pixels within the setup() function to create an empty HTML <canvas> element. We will learn about what the 
+setup() function does in the next exercise.
+
+Don’t worry if you don’t see anything. Your canvas is there—it’s just blank!
+
+
+Hint
+The createCanvas() function takes the width and height of the canvas in pixels as arguments. If you were to create a canvas with a width of 300 pixels and a height of 500 pixels, your 
+code would look something like below:
+
+createCanvas(300, 500);
+
+sketch.js
+---------
+unction setup(){
+  // Setup code goes here
+  // TODO: Create a canvas that is 400px wide and 400px tall
+  createCanvas(400, 400)
+}
+
+function draw(){
+  // Drawing code goes here
+  
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
