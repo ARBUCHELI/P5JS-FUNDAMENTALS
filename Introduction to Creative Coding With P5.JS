@@ -117,6 +117,127 @@ function draw(){
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Function
+----------
+8 min
+Great! You just called your first p5.js function! You might not be able to see anything in the browser yet because the canvas is empty, but it’s there!
+
+Let’s break down the code from the last exercise. Remember the setup() function where we called the createCanvas() function?
+
+function setup() {
+  // Setup code goes here
+  createCanvas(400, 400);
+}
+
+The setup() function is a built-in p5.js function used to set the sketch’s initial state when the sketch begins. It is typically used to create the canvas, set the framerate, or set 
+initial styles (such as stroke and fill color) for the shapes to be drawn in the sketch. It runs only once at the start of the sketch.
+
+You might have noticed that the setup() function is never explicitly called in the sketch. That is because the p5.js library automatically executes a sequence of functions, like setup(), 
+which should be called by the library, not the programmer.
+
+Let’s take a look at the order of events when an HTML page that includes the p5.js library and a p5.js sketch file is loaded:
+
+	1. Scripts in the <head> element of the HTML page are loaded.
+
+	2. The <body> element of the HTML page loads, and an onload event fires, which triggers the next step.
+
+	3. The p5.js library is started, and all built-in p5.js functions can be used in your sketch file.
+
+	4. The p5.js library will automatically call the setup() function and create an HTML <canvas> element.
+
+At this point, the canvas is made, but we can’t see it because it is empty. To view the created canvas, we’ll introduce a new function to fill the canvas with a solid color, the 
+background() function. We’ll go into more detail about this function in the Drawing and Coloring Shapes lesson but know for now that background() takes an integer value between 0 and 255 
+as an argument, representing a gray color value where 0 is pure black, and 255 is pure white.
+
+function setup(){
+  createCanvas(640, 640); // Creates a 640px x 640px canvas
+  background(200); // Sets canvas background to light gray
+}
+
+We can call the background() function after the canvas is created to set a solid color for the background. The background() function is only executed one time, because it is called in the setup() function.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Below the createCanvas() function, using the background() function, set the canvas’s background color to be a gray value of any number between 0 and 255.
+
+
+Hint
+Use the background() function after the canvas is created and provide an integer between 0 and 255 as the argument.
+
+Checkpoint 2 Passed
+2.
+Instead of the static gray value you chose in the previous checkpoint, set the background color to be a random integer between 0 and 255. Use JavaScript’s Math.random() function to 
+generate a decimal number between 0 and 255 and the Math.floor() function to convert the generated decimal number to an integer.
+
+
+Hint
+Remember that the Math.random() function generates a random decimal number between 0 and 1. To generate a random number between 0 and 255, you will need to multiply the function by 256 to 
+get a decimal number that goes up to but not including 256. To convert the randomly generated decimal number to an integer, encase your code for random number generation with the 
+Math.floor() function which will return an integer up to and including 255.
+
+All of this can be done inside the background() function to pass the resulting random integer between 0 and 255 to be used as the canvas background color like below:
+
+background(Math.floor(Math.random() * 256));
+
+Checkpoint 3 Passed
+3.
+Run the p5.js sketch again to see the background color change!
+
+
+Hint
+Click on the “Run” button to see the background color change to a new gray color each time the p5.js sketch runs.
+
+sketch.js
+---------
+function setup(){
+  // Setup code goes here
+  createCanvas(400, 400);
+  // TODO: Set the background color of the canvas
+  background(Math.floor(Math.random() * 256));
+}
+
+function draw(){
+  // Drawing code goes here
+
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
