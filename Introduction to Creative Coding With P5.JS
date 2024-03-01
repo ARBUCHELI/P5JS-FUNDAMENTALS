@@ -27,3 +27,47 @@ to create visualizations like this and more!
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Anatomy of a p5.js Sketch
+---------------------------
+1 min
+Before diving into code, let’s take a look at the web technologies that p5.js uses. If you are relatively new to web programming, remember that web applications typically require three 
+types of files: HTML, CSS, and JavaScript. The same applies to a p5.js program! Here are lists of roles that each of these components plays to render a p5.js sketch.
+
+* HTML:
+-------
+	. HTML is used for the content of a web page.
+
+	. The HTML file is where you can view the output of your p5.js program in the browser.
+
+	. You’ll also have to link your p5.js sketch file and the p5.js library as <script> tags. For more information about how you can download and include the p5.js library in your 
+	HTML document, refer to the Creating a Local p5.js Project article. During your p5.js learning journey on the Codecademy platform, you don’t need to worry about this. We will 
+	focus on learning about the library itself.
+
+* CSS:
+------
+	. CSS stylesheets are used to style HTML elements.
+
+	. p5.js will create an HTML <canvas> element that you can style using CSS. We will talk more about the <canvas> element in the next exercise.
+
+* JavaScript:
+-------------
+
+	. JavaScript is used for adding functionality to a web application.
+
+	. A JavaScript file, typically named sketch.js, will contain the code for your p5.js application.
+
+	. p5.js is a JavaScript library that contains built-in variables and functions to help you develop visual programs.
+
+* Instructions
+--------------
+Take a look at the diagram on the right to explore the anatomy of a p5.js Sketch!
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
