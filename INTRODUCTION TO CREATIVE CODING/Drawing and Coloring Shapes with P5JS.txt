@@ -1,0 +1,38 @@
+# DRAWING AND COLORING SHAPES WITH P5.JS
+----------------------------------------
+
+* Drawing and Coloring Shapes
+-----------------------------
+<1 min
+We’ve learned a lot about what happens in the background when a p5.js sketch starts! The setup() function is automatically called, creating an HTML <canvas> element in our index.html. 
+Now, let’s learn how to use the p5.js library to draw two-dimensional shapes!
+
+The p5.js sketch, or HTML <canvas> element, is a native HTML element that can be dynamically drawn to using JavaScript. The p5.js library provides a suite of drawing functions for common 
+shapes and graphics that simplifies interacting with the canvas. In this lesson, we will explore the coordinate system that the canvas uses, p5.js shape and style functions, and how to 
+create patterns using for loops.
+
+In this this lesson, we will introduce the following shape functions:
+
+	. point() and line()
+
+	. rect() and square()
+
+	. ellipse() and circle()
+
+	. triangle() and quad()
+
+We will also introduce how to change the style of shapes using:
+
+	. stroke() and strokeWeight()
+
+	. fill() and no noFill()
+
+Let’s start by learning about the coordinate system that p5.js canvas uses!
+
+* Instructions
+--------------
+On the right is a p5.js sketch of a repeating pattern made up of simple lines and shapes. By the end of this lesson, you will learn how to create your own patterns of shapes!
+
+Click “Next” to learn about the coordinate system that p5.js canvas uses.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
