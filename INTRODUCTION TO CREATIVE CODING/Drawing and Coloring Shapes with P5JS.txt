@@ -36,3 +36,79 @@ On the right is a p5.js sketch of a repeating pattern made up of simple lines an
 Click “Next” to learn about the coordinate system that p5.js canvas uses.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* The Coordinate System
+-----------------------
+1 min
+You can think about the canvas as the graph paper that your p5.js sketch is drawn on. The canvas uses a two-dimensional grid with ordered pairs used to describe its space. The upper-left 
+coordinate, or the origin, has the coordinate of (0, 0). The first entry of the ordered pair is used to describe the x-axis of the canvas or the distance of pixels from the left edge of 
+the canvas. The second entry of the ordered pair describes the y-axis or the distance of pixels from the top edge of the canvas.
+
+The convention of coordinates makes it easy to construct complex patterns and shapes using mathematical properties of graph systems.
+
+* Instructions
+--------------
+Explore the interactive sketch on the right to understand the coordinate system of the p5.js canvas.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
