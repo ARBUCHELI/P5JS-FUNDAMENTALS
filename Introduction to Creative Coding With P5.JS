@@ -117,8 +117,8 @@ function draw(){
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-* Function
-----------
+* Setup Function
+----------------
 8 min
 Great! You just called your first p5.js function! You might not be able to see anything in the browser yet because the canvas is empty, but it’s there!
 
@@ -204,6 +204,96 @@ function draw(){
 }
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* Draw Function
+---------------
+5 min
+We learned about the structure of a p5.js sketch and that p5.js will automatically call the setup() function! There’s only one more built-in function to learn about before we start 
+programming our own graphics—the draw() function!
+
+The draw() function is similar to the setup() function in that p5.js will automatically execute it at the right time. The draw() function will run after all the code in the setup() 
+function is complete. Note that like the setup() function, the draw() function should not be explicitly called.
+
+Unlike the setup() function, the draw() function will repeatedly execute in what is known as the draw loop. The draw() function is also referred to as the draw() loop because the code 
+block in the function will execute infinitely until the sketch ends by closing the browser window or navigating away from the sketch. The draw loop will also terminate when the noLoop() 
+function is called.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+The background color is currently set once at the beginning of the program in the setup() function. Move the background() function in the setup() function into the draw() function.
+
+
+Hint
+Inside the setup() function, you will see the call to the background() function like below:
+
+background(200);
+
+Move this line of code to the draw() function.
+
+Checkpoint 2 Passed
+2.
+Instead of the static gray value of 200, set the background color to be a random integer between 0 and 255. Use JavaScript’s Math.random() function to generate a decimal number between 0 
+and 255 and the Math.floor() function to convert the generated decimal number to an integer.
+
+Run the code to see the background color of the canvas constantly change to a random gray value!
+
+
+Hint
+Remember that the Math.random() function generates a random decimal number between 0 and 1. To generate a random number between 0 and 255, you will need to multiply the function by 256 to 
+get a decimal number that goes up to but not including 256. To convert the randomly generated decimal number to an integer, encase your code for random number generation with the 
+Math.floor() function which will return an integer up to and including 255.
+
+All of this can be done inside the background() function to pass the resulting random integer between 0 and 255 to be used as the canvas background color like below:
+
+background(Math.floor(Math.random() * 256));
+
+sketch.js
+---------
+function setup() {
+  // Your setup code goes here
+  createCanvas(400, 400);
+  // Run the draw() function once per second (you will learn about the frameRate() function in a later lesson)
+  frameRate(1);
+  // TODO: Move the background() function below to the draw() function
+}
+function draw() {
+  // Your drawing code goes here
+  // TODO: Set background color to a random gray value
+  background(Math.floor(Math.random() *  256));
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
