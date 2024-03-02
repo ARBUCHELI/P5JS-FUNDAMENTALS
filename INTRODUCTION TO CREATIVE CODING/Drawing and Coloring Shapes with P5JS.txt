@@ -739,6 +739,119 @@ function draw() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Ordering
+----------
+5 min
+At this point, you might have noticed that the order in which functions are called matter. Style setting functions such as fill(), stroke(), and strokeWeight() must be called before 
+drawing a shape and will be active for subsequent shapes until the functions are called again to change the styles.
+
+Additionally, the functions placed inside the draw() function will be executed from the top-down. When drawing shapes in the p5.js sketch, the last shape in the draw() function will be 
+drawn on top of previously drawn shapes.
+
+When the draw() function loops again, the last set styles will be used for the shape functions called at the beginning of the loop. Take a look at the code below:
+
+function draw(){
+  // After the first loop, this rectangle will have purple fill color
+  rect(width / 2, height / 2, 100, 100);
+
+  fill('purple');
+  ellipse(100, 300, 50, 50);
+}
+
+The first time the above draw() loop runs, the fill color of the rectangle will be white by default and the ellipse’s fill color will be set to 'purple'. The second time the draw() loop 
+runs, the rectangle’s fill color will also be purple because the set styles carry over until they are explicitly changed with style functions. To make sure the rectangle has a different 
+fill color than the ellipse, the fill() function will have to be called before the rect() function.
+
+function draw(){
+  // Now the rectangle will have red fill color
+  fill(255, 0, 0);
+  rect(width / 2, height / 2, 100, 100);
+
+  fill('purple');
+  ellipse(100, 300, 50, 50);
+}
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+To the right is a p5.js sketch of a slice of Swiss cheese. Remove the stroke of all the shapes by calling noStroke() in the setup() function.
+
+
+Hint
+Calling the noStroke() function inside the setup() function will prevent shape functions drawn in the draw() function from having a border, unless the stroke() function is explicitly 
+called.
+
+Checkpoint 2 Passed
+2.
+In the draw() function, there are ellipses drawn for the holes of the cheese, but they are not visible! The yellow rectangle drawn after the ellipses are covering them up.
+
+Move the “cheese” code block above the “holes” code block. Make sure to include the respective fill() functions.
+
+
+Hint
+Move the lines of code starting from // Cheese to // End Cheese before // Holes. This will result in the rectangle being drawn before the ellipses, making the cheese’s holes visible.
+
+sketch.js
+---------
+function setup() {
+  createCanvas(400, 400);
+  // TODO: Remove stroke
+  noStroke();
+}
+
+function draw() {
+  background(220);
+  
+  //TODO: Draw Cheese before Holes
+  fill('#FFFF66');
+  rect(50, 50, 300, 300);
+  // Holes
+  fill(220);
+  circle(100,100, 50);
+  circle(225,140, 60);
+  circle(150,275, 50);  
+  circle(300,250, 20);
+  // Endholes
+  
+  // Cheese
+ 
+  // End cheese
+
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
