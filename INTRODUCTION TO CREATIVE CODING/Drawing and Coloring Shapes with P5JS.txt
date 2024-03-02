@@ -533,6 +533,129 @@ function draw() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* fill() and noFill()
+---------------------
+6 min
+Let’s add color to our shapes!
+
+The first style function for shapes you should know is the fill() function. fill() allows us to set the fill color, or the inside color of a shape. The default fill color for shapes is 
+white and all shapes, except for points and line, have a fill. The fill() function must be called prior to calling the shape function.
+
+We can set the fill color of shapes by calling the fill() function and passing color arguments like for the background() function. This will set the active fill color until the fill() 
+function is called again with a different color argument.
+
+fill() example
+
+To disable the fill of a shape and make the fill transparent, you can call the noFill() function.
+
+noFill() example
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+In the p5.js sketch to the right, set the top-left circle’s fill to blue using the RGB notation by calling the fill() function before it is drawn.
+
+
+Hint
+You can call the fill() function with RGB values like below:
+
+fill(redValue, greenValue, blueValue);
+
+Checkpoint 2 Passed
+2.
+Set the top-right rectangle’s fill to black and with an alpha value of 40.
+
+
+Hint
+You can call the fill() function with a gray value (between 0 and 255) and provide an additional argument for opacity (alpha) like this:
+
+fill(grayValue, alphaValue);
+
+Checkpoint 3 Passed
+3.
+Next, set the bottom-left triangle to 'purple' with the fill() function.
+
+
+Hint
+You can call the fill() function with a named color value like this:
+
+fill('magenta');
+
+Checkpoint 4 Passed
+4.
+Set the bottom-right circle to transparent using the noFill() function.
+
+
+Hint
+You can call the noFill() function to disable the fill setting. It must be called before a drawing function.
+
+sketch.js
+---------
+let  shapeWidth = 100;
+
+function setup() {  
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(200);
+
+// TODO: Set the top-left circle fill to rgb blue
+  fill(0, 0, 255);
+  circle(width/2 - shapeWidth, 
+         shapeWidth, 
+         shapeWidth);
+
+// TODO: Set the top-right rectangle fill to black with alpha level of 40  
+  fill(0, 40);
+  square(width/2 + shapeWidth/2, 
+         shapeWidth/2, 
+         shapeWidth);
+  
+// TODO: Set the bottom-left triangle to 'purple'
+  fill('purple');
+  triangle(shapeWidth/2, 
+           height/2 + shapeWidth/2, 
+           shapeWidth/2, height - shapeWidth/2, 
+           width/2 - shapeWidth/2, 
+           height/2 + shapeWidth/2);
+
+// TODO: Set the bottom-right circle to transparent
+  noFill();
+  circle(width/2 + shapeWidth, 
+         height/2 + shapeWidth, 
+         shapeWidth);
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
