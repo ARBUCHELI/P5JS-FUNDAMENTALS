@@ -929,7 +929,95 @@ function draw() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Review
+--------
+3 min
+Congratulations! You now know how to draw and color shapes using p5.js! They are the building blocks of the p5.js library and soon you will be adding many more dynamic interactions to 
+them. Let’s review what you’ve learned in this lesson:
 
+	. The p5.js library has many built-in functions to draw 2D shapes to the canvas:
+
+		. point() and line()
+
+		. rect() and square()
+
+		. ellipse() and circle()
+
+		. triangle() and quad()
+
+
+	. There are style functions that must be called before drawing shapes:
+
+		. background()
+
+		. fill()
+
+		. stroke()
+
+		. strokeWeight()
+
+	. p5.js allows for many ways to specify color:
+
+		. gray value (0 - 255)
+
+		. RGB values (0 - 255)
+
+		. Named CSS color (like 'purple' and 'yellow')
+
+		. 3 or 6 digit hexadecimal values (like '#FE0' and '#1557FF')
+
+	. for loops make it easy to draw many shapes at once.
+
+In the next lesson, you will learn more about the draw() loop and how to turn our static p5.js drawings into animations!
+
+* Instructions
+--------------
+Play with the sketch to the right. Try changing some of the arguments of shape and style functions to see how small changes can produce very different designs. When you’re ready, click 
+Next.
+
+sketch.js
+---------
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+}
+
+function draw() {
+  background(220);
+  
+  // Draw a rectangle with the width of canvas's width and the height of canvas's height
+  noStroke();
+  fill(80,80,200,120);
+  rect(0,0,width, height);
+
+  // Draw a grid of diagonal lines
+  for(let j = 0; j< height; j+=20){
+    for(let i = 0; i < width; i+=80){
+      stroke(i, 0, j, 120);
+      strokeWeight(4);
+
+      // Alternate the direction of the diagonal line
+      // Note that j % 40 returns the remainder of j / 40
+      // This means that every time j is a multipe of 40 the diagonal line will be drawn from top-left corner to bottom right corner
+      if(j % 40 === 0){
+        line(i + 10, 20 + j, i, j);
+      } else {   
+        line(i, 20 + j, i + 10, j);
+      }
+    }
+  }
+
+  // Draw repeating columns of retangles and ellipses
+  noStroke();
+  for(let i = 0 ; i < height; i += 80){
+    for(let j = 0; j < width * 1.5; j += 160){
+      fill('pink');
+      rect(j - 125, i+40, 20);
+
+      fill('purple');
+      circle(j - 35, i, 20);
+    }
+  }
+}
 
 
 
