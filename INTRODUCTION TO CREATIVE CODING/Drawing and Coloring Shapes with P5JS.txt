@@ -148,6 +148,102 @@ function draw(){
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Square and Rectangle
+----------------------
+4 min
+Let’s look at our first closed shape, the rectangle! Did you know that there are more rectangular shapes in the world than any other shapes?
+
+Rectangles can be drawn to the p5.js sketch using the rect() function. The function has four parameters, the first and second parameters are the x and y coordinates for the top-left 
+corner of the shape, and the third and fourth parameters set the width and height of the rectangle.
+
+Diagram of rectangle
+
+A square is a special type of rectangle where the height is the same length as the width. They are drawn using the square() function and need three parameters: x and y coordinates for the 
+top-left corner of the square and the width.
+
+Diagram of square
+
+The x and y coordinates for the rect() and square() functions are also known as the anchor point, which is the origin of all transformations. By default, rectangles and squares anchor at 
+the top-left corner of the shape. For now, you can think of the anchor point as the coordinates where shapes are drawn to. The location of the anchor point and how parameters of the 
+rect() and square() functions are interpreted can be changed using the rectMode() function, which will be covered in detail in the Grouping and Transforming Shapes lesson.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Use the rect() function to draw a rectangle in the upper-left quadrant of the p5.js sketch, positioned at (30, 20), with a width of 100 pixels and a height of 200 pixels. Remember that 
+rectangles are positioned by their upper-left corner.
+
+
+Hint
+Rectangles require four arguments when called and uses the following syntax:
+
+rect(x, y, rectWidth, rectHeight);
+
+To draw a rectangle at (50, 100) where width is 200 pixels and height is 300 pixels, your code would look like this:
+
+rect(50, 100, 200, 300);
+
+Checkpoint 2 Passed
+2.
+Next, draw a 100px wide square to the right of the rectangle. Position the square with the top left corner at (250, 100).
+
+
+Hint
+Squares are drawn with the square() function like below:
+
+square(x, y, squareWidth);
+
+To draw a square at (50, 100) where width and height are 300 pixels, your code would look like this:
+
+square(50, 100, 300);
+
+sketch.js
+---------
+function setup(){
+  createCanvas(400, 400);
+  background(200);
+}
+
+function draw(){
+  // Your drawing code goes here
+  // TODO: Draw a rectangle at (30, 20), 100px width and 200px height
+  rect(30, 20, 100, 200);
+  // TODO: Draw a square at (250, 100) and 100px width
+  square(250, 100, 100);
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
