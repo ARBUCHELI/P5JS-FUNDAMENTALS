@@ -215,6 +215,101 @@ function draw(){
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Circle and Ellipse
+--------------------
+3 min
+The next shapes that we’ll look at are some of the most popular shapes in modern architecture—ellipses and circles!
+
+The ellipse() function is similar to the rect() function in requiring four parameters when called. The first and second parameters are the x and y location of where the ellipse is drawn 
+to, but instead of the corner, ellipses are positioned by their center! The third parameter sets the width or the diameter along the x-axis of the canvas, and the fourth parameter is the 
+diameter along the y-axis.
+
+Diagram of ellipse
+
+A circle is a special case of ellipse where the height is equal to the width of the circle. The circle() function has three parameters: the x and y coordinates for the center, and the 
+width, or the diameter of the circle.
+
+Diagram of circle
+
+The way that the parameters for the circle() and ellipse() functions are interpreted can also be changed with the ellipseMode() function, which will be covered in detail in the Grouping and Transforming Shapes lesson.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Use the ellipse() function to draw an ellipse to the sketch with the center position at (150, 200) and the width of 150 pixels, and the height of 100 pixels.
+
+
+Hint
+Ellipses are drawn to the p5.js sketch using the center of the ellipse as the anchor point. The syntax of the ellipse() function is:
+
+ellipse(x, y, ellipseWidth, ellipseHeight);
+
+To draw an ellipse at (100, 50) where width is 200 pixels and height is 300 pixels, you would write:
+
+ellipse(100, 50, 200, 300);
+
+Checkpoint 2 Passed
+2.
+Next to the ellipse that you just drew, draw a circle with a width of 75px and positioned at (300, 150).
+
+
+Hint
+The circle() function uses the following syntax:
+
+circle(x, y, circleWidth);
+
+To draw a circle at (100, 50) where width and height are 300 pixels, your code would look like this:
+
+circle(100, 50, 300);
+
+sketch.js
+---------
+function setup(){
+  createCanvas(400, 400);
+  background(200);
+}
+
+function draw(){
+  // Your drawing code goes here
+  // TODO: Draw an ellipse at (150, 200), 150px width and 100px height
+  ellipse(150, 200, 150, 100);
+  // TODO: Draw a circle at (300, 150) and 75px width
+  circle(300, 150, 75);
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
