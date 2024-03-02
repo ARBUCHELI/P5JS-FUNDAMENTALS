@@ -460,6 +460,106 @@ function draw() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Background and Color
+----------------------
+4 min
+Let’s add some color to our drawings!
+
+We use the background() function to fill the p5.js canvas with a solid color. We previously used it when we looked at the setup() function in the Introduction to Creative Coding with 
+p5.js lesson. The background() function can be used in the setup() function to set the initial color of the canvas when the sketch begins.
+
+The background() function can also be called in the draw() loop to clear the canvas at the beginning of each frame, which is useful for creating animations that will be introduced in a 
+later lesson.
+
+The background() function takes a color as an argument and the p5.js library allows many ways to specify color.
+
+	. You can provide a grayscale integer value between 0 and 255, with 0 being pure black and 255 pure white.
+	Grayscale value illustration
+
+	. You can also specify color in RGB (Red, Green, Blue) notation which uses three integers between 0 and 255, with 255 being fully saturated.
+	RGB value illustration
+
+	. Named CSS color keywords are also valid color values given as a string.
+	Named color value illustration
+
+	. Both three-digit and six-digit hexadecimal color codes can also be used like below.
+	Hexadecimal color value illustration
+
+	. Alpha (transparency) value can be added for grayscale and RGB color notations as an additional argument.
+	Hexadecimal color value illustration
+
+There are more ways to represent colors which can be found on the p5.js reference.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Remember that the initial background of a p5.js sketch can be set by calling the background() function in the setup() function.
+
+Set the initial background color of the sketch to the gray value of 127.
+
+
+Hint
+To specify a gray value for the background, the background() function can be written like below:
+
+background(grayValue);
+
+Checkpoint 2 Passed
+2.
+You can clear the background of each draw loop by calling the background() function within the draw() function. Add a green background using the RGB notation to the draw() function.
+
+Keep the background() function that you added in the previous step in the setup() function.
+
+
+Hint
+To specify a RGB value for the background, the background() function can be written like below:
+
+background(redValue, greenValue, blueValue);
+
+Remember that the minimum value of red, green, and blue values of the RGB notation is 0, and the maximum is 255.
+
+sketch.js
+---------
+function setup() {
+  createCanvas(400, 400);
+  // TODO: Set background color to gray value of 127
+  background(127);
+}
+
+function draw() {
+  // TODO: Set background color to green using RGB notation
+  background(0, 255, 0)
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
