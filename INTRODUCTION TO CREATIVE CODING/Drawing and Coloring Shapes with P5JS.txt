@@ -280,6 +280,119 @@ function draw(){
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Triangle and Quad
+-------------------
+9 min
+The last two drawing functions we’ll learn are triangle() and quad(), which are closely related to the line() function in that they take the coordinates of each corner of the shape as 
+arguments. These arguments are used to define the perimeter of the shape.
+
+The triangle() function takes a total of six arguments or three pairs of x and y coordinates.
+
+Diagram of triangle function
+
+The quadrilateral shape function, quad(), needs eight arguments, or four pairs of x and y coordinates for each of its four points.
+
+Diagram of quadrilateral
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Use the triangle() function to draw a triangle to the p5.js sketch. You can use any coordinates for each of the three vertices of the triangle!
+
+
+Hint
+The triangle() function uses the following syntax:
+
+triangle(x1, y1, x2, y2, x3, y3);
+
+To draw a triangle where the first vertex is at (100, 50), second at (40, 150), and third at (160, 175), you would write:
+
+triangle(100, 50, 40, 150, 160, 175);
+
+Checkpoint 2 Passed
+2.
+The arguments for the triangle() function represent the vertices of the triangle. Draw a second triangle that shares one vertex with the first triangle you drew.
+
+
+Hint
+Make sure to use the coordinates of one of the vertices of the triangle you just drew. For example, if your first triangle’s vertices are at (100, 50), (40, 150), and (160, 175), you 
+should use any of the x and y position pair as one of the vertices for the new triangle.
+
+Checkpoint 3 Passed
+3.
+Next, draw a quadrilateral using the quad() function. You can use any coordinates for each of the four vertices of the quadrilateral!
+
+
+Hint
+The quad() function uses the following syntax:
+
+quad(x1, y1, x2, y2, x3, y3, x4, y4);
+
+To draw a quadrilateral where the first vertex is at (100, 50), second at (40, 150), third at (160, 175), and fourth at (200, 130), you would write:
+
+quad(100, 50, 40, 150, 160, 175, 200, 130);
+
+Checkpoint 4 Passed
+4.
+Draw a second quadrilateral that shares one vertex with the first quadrilateral you drew.
+
+
+Hint
+Make sure to use the coordinates of one of the vertices of the quadrilateral you just drew. For example, if your first quadrilateral’s vertices are at (100, 50), (40, 150), (160, 175), 
+and (200, 130), you should use any of the x and y position pair as one of the vertices for the new quadrilateral.
+
+sketch.js
+---------
+function setup(){
+  createCanvas(400, 400);
+  background(200);
+}
+
+function draw(){
+  // Your drawing code goes here
+  // TODO: Draw a triangle
+  triangle(100, 50, 200, 100, 100, 100);
+  // TODO: Draw a triangle that shares one vertex with the one above
+  triangle(200, 100, 300, 150, 200, 150);
+  // TODO: Draw a quadrilateral
+  quad(100, 400, 200, 450, 200, 500, 50, 500);
+  // TODO: Draw a quadrilateral that shares one vertex with the one above
+  quad(50, 500, 250, 550, 250, 600, 50, 600);
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
