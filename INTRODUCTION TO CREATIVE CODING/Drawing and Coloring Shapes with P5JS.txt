@@ -630,6 +630,143 @@ function draw() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* stroke() and noStroke()
+-------------------------
+6 min
+Shapes have another color as well—stroke!
+
+The stroke is the color used to draw lines or the borders around shapes. All the shapes we have seen so far are drawn with a default stroke color of black. You can set the stroke color 
+with the stroke() function the same way we did for the fill() function. It takes a color as input and must be called before drawing the shape.
+
+stroke() example
+
+The thickness of strokes can be set with the strokeWeight() function. The strokeWeight() function takes a numeric value as input for the width in pixels.
+
+strokeWeight() example
+
+You can disable the stroke from being drawn by calling the noStroke() function.
+
+noStroke() example
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+In the p5.js sketch to the right, set the top-left line’s stroke color to green in RGB notation by calling the stroke() function before the shape is drawn.
+
+
+Hint
+Make sure to call the stroke() function before the shape is drawn. The stroke() function can take RGB values as arguments like below:
+
+stroke(redValue, greenValue, blueValue);
+
+Checkpoint 2 Passed
+2.
+A single pixel is too hard to see! Set the top-right point’s stroke weight to 100 pixels.
+
+
+Hint
+Set the stroke weight with the strokeWeight() function before the point() function.
+
+For example, to set the stroke weight to 10 pixels, your code will look like this:
+
+strokeWeight(10);
+
+Checkpoint 3 Passed
+3.
+Now all the shapes have a stroke of 100 pixels! Return top-left line’s stroke weight to 1 pixel.
+
+
+Hint
+Make sure to set the stroke weight using the strokeWeight() function before the line() function is called.
+
+Checkpoint 4 Passed
+4.
+Let’s change the triangle’s stroke setting. Set the bottom-left triangle’s stroke color to 'red' and stroke weight to 5 pixels.
+
+
+Hint
+Set both the stroke color and the stroke weight before the shape is drawn.
+
+Checkpoint 5 Passed
+5.
+Lastly, set the bottom-right circle to have no stroke.
+
+
+Hint
+Remove the stroke by calling noStroke() before the shape is drawn.
+
+sketch.js
+---------
+let shapeWidth = 100;
+
+function setup() {
+  createCanvas(400, 400);
+  
+  background(200); 
+}
+
+function draw() {
+// TODO: Set the top-left line stroke to green
+  strokeWeight(1);
+  stroke(0, 255, 0);
+  line(width/2 - shapeWidth, 
+        shapeWidth/2,
+        width/2 - shapeWidth,
+        height/2 - shapeWidth/2);
+
+// TODO: Set the top-right point weight to 100 pixels  
+  strokeWeight(100);
+  point(width/2 + shapeWidth, 
+         height/2 - shapeWidth);
+  
+// TODO: Set the bottom-left triangle to stroke color to red and the stroke weight of 5
+
+  strokeWeight(5);
+  stroke('red');
+  triangle(shapeWidth/2, 
+           height/2 + shapeWidth/2, 
+           shapeWidth/2, height - shapeWidth/2, 
+           width/2 - shapeWidth/2, 
+           height/2 + shapeWidth/2);
+
+// TODO: Set the bottom-right circle to a transparent stroke
+  noStroke();
+  circle(width/2 + shapeWidth, 
+         height/2 + shapeWidth, 
+         shapeWidth);
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
