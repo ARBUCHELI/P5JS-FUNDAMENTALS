@@ -52,6 +52,130 @@ Explore the interactive sketch on the right to understand the coordinate system 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Point and Line
+----------------
+7 min
+The p5.js library provides many built-in functions to interact with the canvas with easy-to-remember drawing functions for shapes. While you can call drawing functions in the setup() 
+function, it is typical to use drawing functions in the eponymous draw() function. Let’s begin with the basics by drawing a point to the canvas!
+
+The p5.js library provides the point() function, which draws a single pixel to the canvas. This function requires two arguments: an x coordinate for the horizontal position and a y 
+coordinate for the vertical position of the point.
+
+Diagram of point
+The built-in line() function draws a direct path between two points. To draw a single line, we need four arguments: x and y coordinates of the starting point and x and y coordinates of 
+the endpoint.
+
+Diagram of line
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Inside the draw() function, use the point() function to draw a pixel at the center of the 400px by 400px canvas.
+
+
+Hint
+You can draw a pixel to the p5.js sketch using the point() function with the following syntax:
+
+point(x, y);
+
+To draw a point at (100, 50), your code would be:
+
+point(100, 50);
+
+Checkpoint 2 Passed
+2.
+Next, try drawing a point that is 100 pixels to the left of the center point.
+
+
+Hint
+The x coordinate describes the canvas from left to right in pixels. Try subtracting 100 from the x position of the center of the canvas.
+
+Checkpoint 3 Passed
+3.
+Great! Now let’s practice drawing lines! Use the line() function to draw a diagonal line between two points at coordinates (20, 40) and (320, 120).
+
+
+Hint
+Lines are drawn with the line() function, which takes 4 arguments. The function uses the following syntax:
+
+line(x1, y1, x2, y2);
+
+To draw a line from (100, 50) to (300, 200), your code would look like this:
+
+line(100, 50, 300, 200);
+
+Checkpoint 4 Passed
+4.
+Draw a vertical line that goes across the center of your canvas. This line will equally divide the left and right sides of your canvas.
+
+
+Hint
+The x coordinates for the two endpoints of a vertical line is the same. The y coordinate of one endpoint is at the top of the canvas, and the other is at the bottom of the canvas.
+
+It’s p5.js convention to use the numbers provided in the createCanvas() function when referring to the full width or height of the canvas.
+
+Checkpoint 5 Passed
+5.
+Lastly, draw a diagonal line that starts at the bottom left corner and ends at the top right corner of your canvas.
+
+
+Hint
+Remember that the width and height of the canvas are 400 pixels and the origin (0, 0) of the canvas is at the top-left corner. This means that the coordinates of the bottom-right corner 
+of the canvas are (400, 400).
+
+sketch.js
+---------
+function setup(){
+  // Your setup code goes here
+  createCanvas(400, 400);
+  background(200);
+}
+
+function draw(){
+  // Your drawing code goes here 
+  // TODO: Draw a point at the center of the canvas
+  point(200, 200);
+  // TODO: Draw a point 100px to the left of the center
+  point(100, 200);
+  // TODO: Draw a line between (20, 40) and (320, 120)
+  line(20, 40, 320, 120);
+  // TODO: Draw a vertical line
+  line(200, 0, 200, 400);
+  // TODO: Draw a diagonal line
+  line(0, 400, 400, 0);
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
