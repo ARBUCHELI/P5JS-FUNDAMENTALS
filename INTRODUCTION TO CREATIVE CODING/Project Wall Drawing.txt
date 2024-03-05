@@ -1,0 +1,393 @@
+# PROJECT
+---------
+
+* Wall Drawing
+--------------
+Let’s draw some patterns to create a digital wall drawing inspired by the artist Sol LeWitt using p5.js!
+
+Sol LeWitt (1928-2007) was an American artist known for his Wall Drawings, of which he made over 1,200 in his lifetime. Each Wall Drawing was accompanied by a set of instructions that 
+allowed others to recreate the piece. The instructions detailed the position, shape, and color of elements in the drawing. His instructions left much open to interpretation so that no two 
+installations were identical. His work holds an important place in the modern art movement, where anyone can be an artist.
+
+Together we will create a visualization that is inspired by the work of Sol LeWitt and write instructions using the p5.js shape functions for the computer to draw on the screen.
+
+Tasks
+18/18 complete
+Mark the tasks as complete by checking them off
+
+* Set up p5.js Sketch
+---------------------
+1.
+On the right, you will see the default project structure for a p5.js sketch that consists of index.html, sketch.js, and style.css. The index.html file already sources the p5.js library 
+and our sketch.js file. The CSS code in the style.css file will center your sketch in the browser. You will be writing our code in sketch.js to create your wall drawing.
+
+At the moment, sketch.js is completely empty, but by the end of this project, you will have written code to generate a sketch inspired by Sol LeWitt’s Wall Drawings. Take a moment now to 
+look at the structure of the p5.js project.
+
+
+Hint
+Explore the p5.js project structure in the workspace to the right.
+
+2.
+The first step towards creating our Wall Drawing inspired sketch is to create the canvas. First, declare a setup() function in sketch.js. Inside the setup() function, create a canvas that 
+is 500 pixels wide and 500 pixels high using the createCanvas() function.
+
+
+Hint
+Remember that the createCanvas() function takes two arguments for the canvas’s width and height.
+
+To create a canvas of 640px width and 480px height, you would write:
+
+createCanvas(640, 480);
+
+3.
+Below the setup() function, declare a draw() function. The draw() function will be where we write the instructions for the computer to draw the visualization.
+
+
+Hint
+Create an empty draw() function. Make sure to do this after the setup() function.
+
+4.
+Now that the basic structure of the sketch.js file is set up, let’s make guidelines for the drawing.
+
+In the setup() function, divide the canvas into four equal rectangular areas by drawing two lines—one a line along the vertical center and one along the horizontal center of the canvas.
+
+Run your sketch to see your canvas divided into four quadrants!
+
+
+Hint
+You can use the built-in variables width and height to calculate the midway points of the canvas.
+
+Remember that you can draw a line with the following syntax:
+
+line(x1, y1, x2, y2);
+
+where x1 and y1 are the x and y positions of the start point and x2 and y2 are the x and y positions of the endpoint of the line.
+
+* Parallel Vertical Lines
+-------------------------
+5.
+Let’s fill the first quadrant with a pattern! The upper left quadrant will be filled with parallel lines that run vertically, from the top of the canvas to the bottom of the quadrant, or 
+half the canvas height. In the draw() function, create a for loop using a variable called posX to draw 10 lines that are 25 pixels apart.
+
+Remember that you can use the iterator variable of the for loop to increment by 25 pixels for each iteration.
+
+Run your code to see 10 parallel lines appear in the top-left quadrant!
+
+
+Hint
+To draw 20 vertical lines with 10 pixels apart using a for loop, your code would look like this:
+
+for(let posX = 0; posX < 20; i++){
+    line(posX * 10, 0, posX * 10, 100);
+}
+
+Make sure that the height of your lines is half the canvas height.
+
+6.
+Let’s style the lines using a color palette similar to a Sol LeWitt drawing.
+
+Above the for loop we just wrote, use the built-in stroke() function to give the lines a gray value of 127. Then add some thickness to the lines using the strokeWeight() function. Give 
+the lines a weight of 10 pixels.
+
+Run your sketch to see the change in the style of our first pattern!
+
+
+Hint
+You can pass a number between 0 and 255 as an argument to the stroke() function to set a grayscale value for the stroke color.
+
+The thickness of the lines can be set using the strokeWeight() function by providing the weight in pixels as its argument.
+
+You must call the style functions before the drawing functions for them to take effect.
+
+* Polka Dots
+------------
+7.
+The next quadrant we want to fill is the one on the top-right, which we will draw a polka dot pattern. Before drawing the pattern, we’ll set the style for the polka dots.
+
+Below the for loop we added for the gray parallel lines, let’s style the circles to give them a gold fill color using the hex color code #ffd700. Let’s also remove the stroke on the 
+circles we will draw in the next step using the noStroke() function.
+
+
+Hint
+Remember that you can set a fill color using a hex color code as the argument of the fill() function.
+
+Make sure that the hex color code is given as a string by wrapping the color code in quotation marks ('').
+
+8.
+To make a polka dot pattern, we will draw an evenly spaced grid of circles in the top-right quadrant. Create a nested for loop to draw a 10 by 10 grid of circles using posX as the 
+iterator variable of the outer loop and posY as the iterator variable of the inner loop. Use the iterator variables to position the circles to be 25 pixels apart horizontally and 
+vertically. Give the polka dots a diameter of 10 pixels.
+
+To place the polka dot pattern on the upper right quadrant, make sure to offset all circles’ x positions by adding half of the canvas width to the x position.
+
+Run your code to see a grid of yellow circles appear in our top-right quadrant!
+
+
+Hint
+To increment the circles’ positions, calculate the x and y positions by multiplying the iterator variables (posX and posY) by the desired amount of spacing on each iteration of the for 
+loop.
+
+For example, a nested for loop to create a 5 by 5 grid of squares spaced 50 pixels apart would look like this:
+
+for(let posX = 0; posX < 5; posX++){
+    for(let posY = 0; posY < 5; posY++){
+        square(posX * 50, posY * 50, 25);
+    }
+}
+
+9.
+Let’s turn the grid of circles into a polka dot pattern! You can create polka dots by shifting every other row or column of the grid by a half step. We will recreate this pattern in p5.js 
+by shifting the y position of every other column of circles. To do this, we will use JavaScript’s remainder operator (%).
+
+The remainder operator returns the remainder of the division of the first operand by the second operand. For example, 5 % 3 will return 2, because 3 goes into 5 once and 2 is left over. 
+The % operator is how we can identify odd and even numbers, because any even number divided by 2 will have no remainder, and any odd number will have 1 as the remainder!
+
+Modify the nested for loop where you draw the grid of circles. Use an if statement to check if the value of the posX variable (the iterator variable of the outer loop) is even. You can do 
+this by checking if posX % 2 === 0 is true.
+
+If the statement is true, draw the circle with a 10 pixel offset for the y position. Add an else statement to the if statement to draw the circle without an offset if posX is an odd 
+number.
+
+You should now see our grid transformed into a polka dot pattern.
+
+
+Hint
+Use if and else statements to check if the posX iterator variable of the outer for loop is an even number using the remainder (%) operator like below:
+
+if(posX % 2 === 0){
+  // posX is an even number
+}else{
+  // posX is an odd number
+}
+
+Make sure to do this inside the nested for loop.
+
+* Checkered Squares
+-------------------
+10.
+The bottom-left quadrant will have a checkered pattern, which we will create using the square() function.
+
+To start making the checkered pattern, we’ll first create stripes composed of 5 rows of 10 squares side-by-side. Below the nested for loop we just created for the polka dots, create a 
+nested for loop where the outer loop iterates 10 times using the posX iterator variable and the inner loop iterates 5 times using the posY iterator variable. Increment the square’s x 
+position using the posX variable by 25 pixels and the y position using the posY variable by 50 pixels. Set the size of the squares to be 25 pixels.
+
+Don’t forget to add half of the canvas height to the y position to draw the stripes on the canvas’s bottom-left quadrant!
+
+Run your code to see yellow horizontal stripes in the bottom-left quadrant.
+
+
+Hint
+This nested for loop should look very similar to the one we created for the polka dot pattern, except that the inner loop should only iterate 5 times.
+
+Make sure to offset the y position of the whole stripe pattern by adding half of the canvas height!
+
+11.
+The next step to create a checkered pattern is to fill the empty rows by shifting every other column of squares into them. We will modify the code inside the nested for loop we just 
+created to do this.
+
+Let’s use the remainder operator (%) again to write an if-else statement to check if the posX iterator variable for the outer loop is even. If the statement is true, draw the square with 
+the addition of 25 pixels to the y position. Otherwise, draw the square using the original calculations for the x and y positions.
+
+Run your code to see the stripes changed to a checkered pattern!
+
+
+Hint
+The structure of the if-else statement should look similar to the one we created for the polka dot pattern.
+
+If the posX variable is even, draw the square using the arguments we set in the previous step, but with 25 pixels added to the y position. If the variable is false, draw the square using 
+the same arguments from the previous step.
+
+Make sure to do this inside the nested for loop.
+
+12.
+We’ll want to color the checkered pattern red. Use the fill() function to set the color of the pattern to the named CSS value 'red'.
+
+
+Hint
+Remember that you must call the style functions before the shape is drawn—make sure to call the fill() function before the nested for loop for the checkered pattern!
+
+* Parallel Diagonal Lines
+------------------------- 
+13.
+For the last quadrant, let’s draw a pattern of blue diagonal lines. Since we will be using the line() function, set a stroke weight of 10 with the strokeWeight() function. Set the stroke 
+color to blue using the RGB notation with the stroke() function.
+
+
+Hint
+Use the style functions after the previously drawn patterns.
+
+14.
+The lines will be angled diagonally, from the upper left corner to the bottom right. We will be drawing a total of 20 lines: 10 lines for the lower-left half and 10 lines for the 
+upper-right half.
+
+The first goal is to draw the left half of the pattern. Beneath the style functions, create a for loop that iterates 10 times using the i iterator variable.
+
+To fill the quadrant and prevent overflow, we will draw lines with the starting point at half of the canvas width for the x position and the canvas height subtracted by i iterator 
+variable multiplied by 25 as the y position. The reason for this incremental subtraction is to space the diagonal lines by 25 pixels. Set the endpoint to half the canvas width added by i 
+multiplied by 25 for the x position and the canvas height as the y position.
+
+Run the sketch to see the left half of the quadrant filled with diagonal lines!
+
+
+Hint
+Remember that the line() function requires 4 arguments: x and y positions for the starting point and the endpoint.
+
+Be sure to draw your lines inside the for loop. Using the iterator variable, we move the starting point’s y position by 25 pixels upwards and the endpoint’s x position by 25 pixels to the 
+right.
+
+15.
+Next, we’ll fill the other half of the quadrant.
+
+Using the same for loop, add another line() function. Set the starting point at half the canvas width added by the i iterator variable multiplied by 25 as the x position and half the 
+canvas height as the y position. The endpoint’s x position will be at the canvas width and the y position at the canvas height subtracted by i multiplied by 25.
+
+Run your sketch to see the quadrant filled with blue diagonal lines!
+
+
+Hint
+Make sure that this second line() function is still inside the for loop we used to draw the lower-left half of the diagonal lines.
+
+* Borders
+---------
+16.
+We’re almost done with our wall drawing! The last thing we’ll want to do is draw in the borders.
+
+We’ll create the borders at the end of the draw() function after all patterns have been drawn. To do this, let’s reuse our code for the guidelines. Move the line() functions from the 
+setup() function to the bottom of the draw() function.
+
+Next, use the line() function to draw four lines across the top, bottom, left, and right edges of the canvas.
+
+Run your code to see blue borders appear around the four quadrants.
+
+
+Hint
+Draw a total of 6 lines at the end of your draw() function. Two of those lines will be the guidelines we set earlier. Draw two horizontal lines for the top and bottom edges of the canvas 
+and two vertical lines for the left and right edges of the canvas.
+
+Utilize the width and height variables for the arguments of your line() functions.
+
+17.
+Our last step is to style the borders!
+
+Give the borders a black stroke color.
+
+
+Hint
+You must call style functions before the drawing functions to take effect. Set your stroke color using the stroke() function before drawing the lines for the borders.
+
+18.
+Take a moment and look at the drawing you’ve created.
+
+Optionally, you can continue to play around with the code. You can see that some of our patterns are hidden underneath the borders. How can you shift the positions of the patterns to 
+account for the width of the borders? How can you reproduce the same patterns using different functions or operators? Try creating your own patterns for some (or all!) of the quadrants!
+
+
+sketch.js
+---------
+// TODO: Create setup() function
+function setup() {
+ 
+  // Inside the setup() function:
+  // TODO: Create canvas 500px wide and 500px high
+  createCanvas(500, 500);
+ 
+}
+  // TODO: Draw horizontal and vertical guidelines
+function draw() {
+  
+  
+
+
+
+// TODO: Create wall drawing inside draw() function
+
+  // Inside the draw() function:
+  // Draw parallel lines:
+  // TODO: Set stroke color and weight
+   stroke(127);
+   strokeWeight(10);
+   for(let posX = 0; posX < 10; posX++){
+    line(posX * 25, 0, posX * 25, height/2);
+   }
+
+  
+  
+
+
+
+
+  // TODO: Use a for loop to draw 10 vertical lines
+
+
+
+  // Draw polka dots:
+  // TODO: Set no stroke and fill color
+  noStroke();
+  fill('#ffd700');
+
+
+  // TODO: Use nested for loops to draw a grid of circles
+  // TODO: Offset y positions of every other column by 10 pixels
+  for(let posX = 0; posX < 10; posX++){
+    for(let posY = 0; posY < 10; posY++){
+        if(posX % 2 === 0) {
+          circle(posX * 25 + width/2, posY * 25 + 10, 10);
+        } else {
+            circle(posX * 25 + width/2, posY * 25, 10);
+        }
+    }
+  }
+
+  fill('red'); 
+  for(let posX = 0; posX < 10; posX++){
+    for(let posY = 0; posY < 5; posY++){
+      if(posX % 2 === 0) {
+        square(posX * 25, posY * 50 + height/2 + 25, 25);
+      } else {
+        square(posX * 25, posY * 50 + height/2, 25);
+      }  
+    }
+  }
+
+
+
+  // Draw checkered squares:
+  // TODO: Set fill color
+
+
+  // TODO: Use nested for loops to draw rows of squares
+  // TODO: Offset y positions of every other column by 25 pixels
+
+
+  
+  // Draw parallel diagonal lines:
+  // TODO: Set stroke color and weight
+    stroke(0, 0, 255);
+    strokeWeight(10);
+
+  // TODO: Use a for loop to draw diagonal lines
+  for(let i = 0; i < 10; i++) {
+    line(width/2, height - i * 25, width/2 + i * 25, height);
+    line(width/2 + i * 25, height/2, width, height - i * 25);
+  }
+
+ 
+    
+
+  // Draw borders:
+  // TODO: Set stroke color
+
+
+  // TODO: Draw horizontal and vertical guidelines
+  stroke(0);
+  line(width/2, 0, width/2, height);
+  line(0, height/2, width, height/2);
+
+  // TODO: Draw borders around canvas
+  line(0, 0, width, 0);
+  line(0, height, width, height);
+  line(0, 0, 0, height);
+  line(width, 0, width, height);
+}
+
