@@ -94,3 +94,242 @@ function spaceship(x, y, size) {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Frames
+--------
+9 min
+In p5.js, multiple frames can easily be shown in a sequence using the draw() loop. By default, any code in the draw() function will repeat over and over again, many times per second. This 
+function’s endless repetition is ideal for making an animation because we can write code in the draw() function that slightly alters our image each time it runs.
+
+As a quick recap, the draw() function is similar to an endless for-loop that repeatedly runs the code block inside from top to bottom. The draw() function runs after the setup() function 
+that runs only once at the program’s start.
+
+function setup(){
+  // Code inside setup() function runs once when you start the program
+}
+function draw(){
+  // Code inside draw() function loops infinitely after setup() is run
+}
+
+It is helpful to think of an animation as a series of frames, like a film roll. By showing the series of frames fast enough, our brain is tricked into thinking the sequential images are 
+an animation. The example below shows a series of frames shown like a film roll.
+
+Series of Frames
+
+To create a smooth animation with code, p5.js runs the draw loop at 60 frames per second. Below is an example of how each frame is overriding the previous one to create this animation.
+
+Series of Frames
+
+With p5.js, one frame is the equivalent to one loop through the draw() function. To keep track of the number of frames rendered, p5.js provides a built-in variable called frameCount. This 
+variable counts the number of frames that have been displayed since the program started. The frameCount variable updates with every frame. The first time the draw() loop runs, the value 
+of the frameCount is one; the second time the draw() loop runs, the frameCount is two; and so forth.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Below the line of code that sets fill color to white, draw an ellipse using the frameCount variable as the x position. Let the y position be height / 2. Set the width and height to be 300 
+pixels. See how the ellipse moves from the left to right because the frameCount value increases with every frame.
+
+
+Hint
+Remember that the syntax for drawing an ellipse is as follows:
+
+ellipse(x, y, ellipseWidth, ellipseHeight);
+
+Make sure to draw the ellipse below the line that sets the fill color to white like below:
+
+fill(255);
+
+Checkpoint 2 Passed
+2.
+In the last line within the draw() function, draw text using the text() function. Set the first parameter to be the frameCount variable. Set the second parameter, which is the x location, 
+to be width / 2. Set the third parameter, which is the y location, to be height / 2.
+
+Notice how p5.js keeps track of the number of frames run since the program begins.
+
+
+Hint
+You can draw text to the p5.js canvas using the text() function with the following syntax:
+
+text(word, x, y);
+
+where word represents the text to be drawn and x and y respectively refer to the x and y position of the text.
+
+sketch.js
+---------
+function setup() {
+  createCanvas(windowWidth,windowHeight);
+}
+
+function draw() {
+  background(0);
+
+  //Draw moving ellipse
+  fill(255);
+  // TODO: draw an ellipse with frameCount as the x position
+  ellipse(frameCount, height/2, 300, 300);
+
+  //Draw text 
+  fill(120); 
+  textSize(72);
+  textAlign(CENTER);
+
+  // TODO: create text with frameCount displayed in sketch
+  text(frameCount, width/2, height/2);
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* FPS
+-----
+3 min
+Frames Per Second (FPS) specifies the number of frames displayed every second. When the FPS of animation is lower, it looks like it is in slow motion. When the frame rate is higher, the 
+animation looks like it is being fast-forwarded.
+
+p5.js will automatically run your code at 60 frames per second. However, you can manipulate the FPS by using the frameRate() function, which will change the number of frames shown per 
+second to the number specified as the function’s argument. For example, the code snippet below will cause the draw() function to run numberOfFrames times per second.
+
+frameRate(numberOfFrames);
+
+The frameRate() function will not go over 60 frames per second in p5.js. This is more than enough! A typical animation is between 24 to 30 frames per second.
+
+Different FPS
+
+In the diagram above, you can see the ball dropping at ten frames per second (10 FPS), 30 frames per second (30 FPS), and 60 frames per second (60 FPS). Notice that when the animation has 
+a lower frame rate, each frame is more distinct.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Let’s play around with the frame rate to manipulate the speed the sketch is run at. Below the createCanvas() function, add a frame rate of 60 frames per second in the setup() function.
+
+
+Hint
+Use the frameRate() function in the setup() function to set the FPS of the sketch to 60.
+
+Checkpoint 2 Passed
+2.
+Below the line you just added, set the frame rate to 24 frames per second.
+
+Remember that code runs from top to bottom, so this new frame rate will override the frame rate we set in the above instruction. Notice the change in animation speed.
+
+
+Hint
+Below the line you set the frame rate to 60 FPS, use the frameRate() function to set frame rate to 24.
+
+Checkpoint 3 Passed
+3.
+Below the line you just added, write a new frameRate() function and set it to run at 6 frames per second.
+
+Notice how the animation has slowed down and now has a stop motion effect.
+
+
+Hint
+Below the line you set the frame rate to 24 FPS, use the frameRate() function to set the frame rate to 6.
+
+sketch.js
+---------
+let yPos = 0;
+let ySpeed = 5;
+
+function setup() { 
+  createCanvas(windowWidth, windowHeight);
+  // TODO: Set the frame rate to be 60 FPS
+  frameRate(60);
+  // TODO: Set the frame rate to be 24 FPS
+  frameRate(24);
+  // TODO: Set the fram erate to be 6 FPS
+  frameRate(6);
+} 
+
+function draw() { 
+  background(0);
+  fill(255);
+  // Draws the ellipse
+  ellipse(width/2, yPos, 100,100);
+  
+  // Moves the ellipse down the canvas
+  yPos = yPos + ySpeed; 
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
