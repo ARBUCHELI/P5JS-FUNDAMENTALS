@@ -255,6 +255,154 @@ function draw() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Incrementing and Decrementing Values
+--------------------------------------
+8 min
+Variables are a crucial component for creating movement in p5.js. To have your sketch change over time, you will need to increment or decrement your variables with each frame.
+
+Remember that after you declare a variable, you can always reassign it by giving it a new value. In order to have your element move across the canvas, it is necessary to first define your 
+variable, then reassign that variable to be incrementing and decrementing.
+
+The code below shows how to increment an ellipse along the x-axis of the canvas.
+
+// Initialize xPos variable to 5
+let xPos = 5;
+
+function draw(){
+  // Use xPos variable as x position of ellipse
+  ellipse(xPos, 100, 100, 100);
+  // Increment xPos by 1 every draw loop
+  xPos += 1; 
+}
+
+A value is incremented by writing the following expression:
+
+x = x + 1;
+
+Above, the x variable is taking its own value and then adding 1 to it. This expression can also be written as x++ or x += 1.
+
+A value is decremented by writing the following expression:
+
+x = x - 1;
+
+Here, the x variable is taking its own value and then subtracting 1 from it. This expression can also be written as x-- or x -= 1. Keep in mind that the value 1 can be changed to any 
+other number.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+In this exercise, you will reassign variables in order to gradually change the size, color and position of the ellipse over time.
+
+In the draw() loop underneath the fill() function, create an ellipse with the global variable xPos for the x position, height / 2 for the y position, and size for the width and the 
+height.
+
+
+Hint
+Remember that you can create an ellipse with the following syntax:
+
+ellipse(x, y, ellipseWidth, ellipseHeight);
+
+Checkpoint 2 Passed
+2.
+In the line below the ellipse() function call, increment the color variable by 1.
+
+
+Hint
+You can increment a value by writing:
+
+x += 1;
+
+This takes the current value of the variable and then adds 1 to it.
+
+You can also write the above expression as:
+
+x = x + 1;
+
+Checkpoint 3 Passed
+3.
+Now that we have incremented the ellipse’s color, let’s increment the size of the ellipse. Increment the size variable by 0.5.
+
+
+Hint
+You can increment a value by writing:
+
+x += 1;
+
+This takes the current value of the variable and then adds 1 to it.
+
+You can also write the above expression as:
+
+x = x + 1;
+
+Checkpoint 4 Passed
+4.
+Let’s do the same for the x position of the ellipse. Reassign the xPos variable so it is decrementing by a value of 2.
+
+Great job! The previously static sketch we started out with is now an animation with many elements changing over time.
+
+
+Hint
+You can decrement a value by writing:
+
+x -= 1;
+
+This takes the current value of the variable and then subtracts 1 from it.
+
+You can also write the above expression as:
+
+x = x - 1;
+
+sketch.js
+---------
+let xPos = 0;
+let color = 1;
+let size = 1;
+
+function setup() { 
+  createCanvas(windowWidth, windowHeight);
+  xPos = width;
+} 
+
+function draw() { 
+  background(0);
+  fill(color);
+
+  // TODO: Draw an ellipse with xPos variable for the x position
+  ellipse(xPos, height/2, size, size);
+  // TODO: increment the color variable by 1
+  color += 1;
+  // TODO: increment the size variable by 0.5
+  size += 0.5;
+  // TODO: decrement the xPos variable by 2
+  xPos -= 2;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
