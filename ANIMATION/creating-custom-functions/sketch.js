@@ -13,13 +13,15 @@ function draw() {
   background(0, 15);
 
   // TODO: Call the makeCircle() function with 4 for xPos, 50 for yPos and 600 for circleSize
+  fill(0, 250, 0, 0.8);
   makeCircle(4, 50, 600);
 
   // TODO: Call the makeCircle() function with 0 for xPos, 200 for yPos and 200 for circleSize
+  fill(250, 0, 0, 0.8);
   makeCircle(0, 200, 200);
 
   // TODO: Call the makeCircle() function with 100 for xPos, 200 for yPos and 1 for circleSize
-  makeCircle(100, 200, 1);
+  makeCircle(0, 0, 250, 0.8);
 }
 
 function makeCircle(xPos, yPos, circleSize) { 
