@@ -826,6 +826,118 @@ function draw() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Creating Custom Functions
+---------------------------
+8 min
+p5.js is built on functions. For example, the draw() loop is a function used in every sketch. All shapes are drawn using functions such as ellipse(), rect() and line().
+
+As a reminder, you can define functions by writing:
+
+function nameOfFunction (x, y, z){
+   // Do something when this function is called
+}
+
+In the code above, x, y, and z are variables that represent the function’s parameters. Parameters are a way to introduce variations into your functions. For example, let’s say you want to 
+draw three clouds, but you want each cloud’s location and size to be different. To do this, you would need to write parameters for your makeCloud() function. When you call the function, 
+the variables get replaced with the specific values passed into that makeCloud() function call.
+
+Take a look at the cloud.js file to your right. See how the function’s parameters are used to create variations. Keep in mind that p5.js runs through the program line by line, from top to 
+bottom. Every time the program reaches a makeCloud() function call, the program jumps to the function definition outside of the draw() loop.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+With this exercise, you will practice calling a function and passing parameters into it.
+
+Open sketch.js. Inside the draw() function and below the background() function, call the function makeCircle(), which is already defined in the sketch. Pass in the value 4 for the xPos, 
+50 for the yPos, and 600 for the circleSize parameter.
+
+
+Hint
+Make sure that the order in which you pass in the values for the function’s parameters correlates to how the function is defined.
+
+Checkpoint 2 Passed
+2.
+Below the one you just called, write a new call to the makeCircle() function. Pass in the value 0 for the xPos, 200 for the yPos, and 200 for the circleSize parameter.
+
+
+Hint
+Make sure that the order in which you pass in the values for the function’s parameters correlates to how the function is defined.
+
+Checkpoint 3 Passed
+3.
+Below your second makeCircle() function, write your last call to the makeCircle() function. Pass in the value 100 for the xPos, 200 for the yPos, and 1 for the circleSize parameter.
+
+
+Hint
+Make sure that the order in which you pass in the values for the function’s parameters correlates to how the function is defined.
+
+cloud.js
+--------
+let xPos = 0;
+let yPos;
+let cloudSize;
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(0);
+
+  makeCloud(xPos + width / 2, 50, 50);
+  makeCloud(xPos + width / 7, 210, 140);
+  makeCloud(xPos + width / 1.5, 340, 70);
+}
+
+function makeCloud(xPos, yPos, cloudSize) {
+  noStroke();
+  fill(255);
+
+  ellipse(xPos, yPos, cloudSize);
+  ellipse(xPos + cloudSize / 2, yPos, cloudSize);
+  ellipse(xPos + cloudSize, yPos, cloudSize);
+  ellipse (xPos + cloudSize/2, yPos - cloudSize/3, cloudSize);
+}
+
+sketch.js
+---------
+let t;
+let increment = 0.001; 
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  strokeWeight(2);
+  stroke(255);
+  noFill();
+  t = 0;
+}
+
+function draw() {
+  background(0, 15);
+
+  // TODO: Call the makeCircle() function with 4 for xPos, 50 for yPos and 600 for circleSize
+  makeCircle(4, 50, 600);
+
+  // TODO: Call the makeCircle() function with 0 for xPos, 200 for yPos and 200 for circleSize
+  makeCircle(0, 200, 200);
+
+  // TODO: Call the makeCircle() function with 100 for xPos, 200 for yPos and 1 for circleSize
+  makeCircle(100, 200, 1);
+}
+
+function makeCircle(xPos, yPos, circleSize) { 
+  let x = width * noise(t + xPos);
+  let y = height * noise(t + yPos);
+  let size = width * noise(t + circleSize);
+
+  ellipse(x, y, size, size);
+
+  t += increment;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
