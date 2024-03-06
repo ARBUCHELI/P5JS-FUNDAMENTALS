@@ -1,0 +1,88 @@
+# GROUPING AND TRANSFORMING SHAPES
+----------------------------------
+
+* Introduction
+--------------
+<1 min
+Previously, we learned how to directly edit the shape’s style and position. However, there are instances when you may want to change the appearance of a shape without altering its 
+original form. With grouping and transformation functions you can translate, rotate, scale, and shear shapes without changing the code of the shape functions. It is possible to do this 
+because the transformation functions modify the coordinate system of the p5.js sketch, not the shape itself. Understanding these grouping and transformation concepts will show you new 
+ways to create dynamic p5.js sketches!
+
+By the end of this lesson, you will be able to:
+
+	. Change the origin point from which the shape is drawn from.
+
+	. Change the location of where the shape is drawn without editing its code.
+
+	. Rotate a shape by rotating the p5.js coordinate system.
+
+	. Rotate a shape around its center point.
+
+	. Transform a shape’s size without editing its code.
+
+	. Shear a shape.
+
+	. Isolate styles and transformations using push() and pop().
+
+	. Combine multiple transformation functions to create intricate animations.
+
+* Instructions
+--------------
+Take a look at the p5.js sketch on your right. Pay attention to the transformation and grouping functions we will cover in this lesson such as rectMode(), translate(), rotate(), 
+radians().
+
+Feel free to play around with the code! For example, try changing x -= 5, the for loop expression, to x-= 100. See how that alters the rotation rate and the number of squares in the 
+animation.
+
+Whenever you are ready to learn more, click Next to continue!
+
+sketch.js
+---------
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  // Sets origin mode to be the rectangle's center
+  rectMode(CENTER);
+}
+
+function draw() {
+  background(0);
+
+  // Moves rectangle to center of canvas
+  translate(width / 2, height / 2);
+
+  // Creates multiple rotating rectangles
+  for (let x = 500; x > 0; x -= 5) {
+      // Makes height the same as width so it's a square
+      let y = x;
+      strokeWeight(0.5);
+      rotate(radians(frameCount / 50));
+      fill(255, x, 255);
+      rect(0, 0, x, y);
+  }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
