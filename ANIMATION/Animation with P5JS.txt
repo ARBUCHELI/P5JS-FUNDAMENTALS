@@ -544,6 +544,172 @@ function draw() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Random
+--------
+11 min
+If you want to add some unpredictability to your sketch, random() is the perfect function for you! This is especially helpful when you are tired of making decisions and are happy to let 
+computation make some of them for you.
+
+The random() function returns a random value every time it is called. There are a few ways to write this function:
+
+	. random() returns a value between 0 and 1.
+
+	. random(max) returns a value between 0 and max value, but excluding the max value.
+
+	. random(min, max) returns a value between min value and max value, but excluding the max value.
+
+	. If the random() function is used inside the draw() loop, the random() function generates a different randomized value every time the draw() function runs.
+
+The image below shows multiple circles appearing in random locations and sizes every time it runs through the draw() function.
+
+Random Position and Size
+
+The above animation is created using the code snippet below:
+
+let xPos = random(width); // Generate random number between 0 and width
+let yPos = random(height); // Generate random number between 0 and height
+let size = random(10, 101); // Generate random number between 10 and 100
+
+circle(xpos, ypos, size);
+
+Here, the xPos variable is set to a random value between 0 and canvas width and the yPos variable to a random value between 0 and canvas height. The size variable is set to a random 
+number between 10 and 100. These randomly generated values are used to generate circles at random positions and sizes.
+
+Similar to how we used the random() function to generate random sizes and positions for our ellipses, we can also use the random() function to get a random color value.
+
+Remember that you can use the RGB notation as the color arguments for the fill() function. Refer to the Drawing and Coloring Shapes lesson if you would like to review how to use colors in 
+p5.js.
+
+The code below generates random values between 0 and 255 for the red, green, and blue values. Keep in mind that in order to get a value between 0 and 255, including 255, you need to pass 
+256 into the random() function since the maximum value is exclusive.
+
+fill(random(256), random(256), random(256)); 
+
+This can also be written as:
+
+fill(random(0, 256), random(0, 256), random(0, 256));
+
+All Random Colors
+
+Passing in random values for all three color channels will give you this fun, rainbow color scheme. Rainbows are awesome! But sometimes you may want to have a limited, but still random, 
+color palette. For example, if you want all the ellipses to be within the red spectrum, you can choose to randomize only the red value.
+
+fill(random(256), 0, 0); 
+
+Now, all the ellipses are varying shades of red.
+
+Red Random Colors
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Let’s practice using the random() function to animate the position and color of your ellipses.
+
+Inside the draw() function, set the circleX variable to be a random value between 0 and width.
+
+
+Hint
+Remember that you can generate a random value by writing:
+
+let randomNumber = random(min, max);
+
+where min represents the value of the minimum range and max represents the value of the maximum range. Remember that the randomly generated number does not include the max value.
+
+Checkpoint 2 Passed
+2.
+Next, set the circleY variable to be a random value between 0 and height.
+
+
+Hint
+Remember that you can generate a random value by writing:
+
+let randomNumber = random(min, max);
+
+where min represents the value of the minimum range and max represents the value of the maximum range. Remember that the randomly generated number does not include the max value.
+
+Checkpoint 3 Passed
+3.
+Now, write a fill() function and set the value to be a random number between 0 and 256.
+
+Since there is only one value passed into the fill() function, the color will be a value between black (0) and white (255).
+
+
+Hint
+Remember that you can set a gray fill color by passing one numeric argument to the fill() function like below:
+
+fill(grayValue);
+
+Remember that the randomly generated number does not include the grayValue value.
+
+Checkpoint 4 Passed
+4.
+At the bottom of your draw() function, create an ellipse. Pass in the circleX variable for the x position, circleY for the y position, and 50 for the width and height.
+
+
+Hint
+Remember that you can draw an ellipse with the following syntax:
+
+ellipse(x, y, ellipseWidth, ellipseHeight);
+
+sketch.js
+---------
+let circleX;
+let circleY;
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  background(0);
+  noStroke();
+  frameRate(10);
+}
+
+function draw(){
+  // TODO: Set the elliipse's x position to be a random position
+  circleX = random(0, width);
+
+  // TODO: Set the elliipse's y position to be a random position
+  circleY = random(0, height);
+
+  // TODO: Set the fill to be a random value between white and black
+  fill(random(0, 256));
+
+  // TODO: Create an ellipse with defined variables passed in
+  ellipse(circleX, circleY, 50, 50);
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
