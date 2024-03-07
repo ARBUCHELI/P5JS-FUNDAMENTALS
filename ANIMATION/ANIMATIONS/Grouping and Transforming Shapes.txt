@@ -530,6 +530,125 @@ function draw() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Scale
+-------
+5 min
+scale() is another function that transforms the p5.js coordinate system. As shown in the image below, you can see that the scale() function changes the size of the coordinate system as 
+well the elements placed on it.
+
+Example of how the scale function works
+
+Notice how the size of the shape’s strokes also gets larger. This is because scale() enlarges the whole p5.js coordinate system, not just the shape. In a sense, the scale() function is 
+like zooming in and out of the canvas.
+
+The scale() function can take two arguments but must have at least one to represent the percentage amount for scaling the canvas. Scale values are written in decimal percentages. For 
+example, scale(2.0) multiplies the size of the coordinate system and all of its elements by 200%. The default scale for the p5.js canvas is 1.0 or 100%.
+
+scale(s, y);
+
+Let’s take a closer look at the syntax above:
+
+	. s represents the percentage value to scale the canvas. It is also the percentage to scale the canvas along the x-axis if the second y argument is given.
+
+	. y can optionally be given to represent the percentage value to scale the canvas along the y-axis.
+
+Similar to the rotate() function, if you want to scale a shape from its center, you would need to set the origin point of the shape to CENTER. In the image below, you can see the 
+difference between scaling from a shape’s CORNER versus its CENTER.
+
+Scale from Corner Versus Center
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Above the first rect() function, scale the rectangle down by 0.5. This means the rectangle will scale down by 50%.
+
+
+Hint
+The syntax for scaling a shape is:
+
+scale(value);
+
+where value is a decimal number. To scale the canvas by 250%, your code will look like this:
+
+scale(2.5);
+
+Checkpoint 2 Passed
+2.
+Above the second rect() function, scale the rectangle up by a value of 4. This means it will scale up by 400%.
+
+
+Hint
+The syntax for scaling a shape is:
+
+scale(value);
+
+where value is a decimal number.
+
+Checkpoint 3 Passed
+3.
+Below the last scale() function that scaled the rectangle by 400%, set the origin point of the rectangle to be CENTER.
+
+
+Hint
+You can use the rectMode() function to specify a rectangle’s origin point—either as CENTER or CORNER.
+
+sketch.js
+---------
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+}
+
+function draw() {
+  background(0);
+  fill(255, 0, 0);
+
+  // TODO: Scale the rectangle down by 0.5
+  scale(0.5);
+  rect(0, 0, 120, 120); // First rectangle
+
+  fill(0, 0, 255);
+
+  // TODO: Scale the rectangle up by 4
+  scale(4);
+
+  // TODO: Set the rectangle's origin point to be its center
+  rectMode(CENTER);
+  rect(100, 100, 120, 120); // Second rectangle
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
