@@ -619,6 +619,163 @@ function draw() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Shear
+-------
+6 min
+Shear functions skew a shape in a specific direction. The shape is sheared by the angle amount specified as the function’s argument. In p5.js, shapes are sheared in a clockwise direction. 
+If the angle value is negative, the shape will shear in a counter-clockwise direction.
+
+The image below shows a rectangle being sheared in both the x- and y-axis with angle values ranging from positive to negative.
+
+Shearing a Shape Horizontally and Vertically
+
+The shearX() function angles a shape around the x-axis by the amount given as its argument. The below code horizontally shears the rectangle by 0.5 radians.
+
+shearX(0.5);
+rect(100, 100, 150, 200);
+
+The image below shows a rectangle sheared along the x-axis.
+
+Shearing a Shape Horizontally
+
+The shearY() function angles a shape around the y-axis by the amount specified as the argument. The below code vertically shears the rectangle by QUARTER_PI radians.
+
+shearY(QUARTER_PI);
+
+rect(100, 100, 150, 200);
+
+The image below shows a rectangle sheared along the y-axis.
+
+Shearing a Shape Vertically
+
+Note that the arguments of the shearX() and shearY() functions are interpreted in radians by default but can be changed calling the angleMode() function before a shear function is called.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Below the rectMode() function, specify the angle mode to be in DEGREES.
+
+
+Hint
+You can specify the angle mode using the angleMode() function—either as DEGREES or RADIANS.
+
+Checkpoint 2 Passed
+2.
+Above the first for loop, horizontally shear the red rectangles by 15 degrees.
+
+
+Hint
+The syntax to shear a shape along the x-axis is:
+
+shearX(angle);
+
+To horizontally shear a shape by 45 degrees, you would write:
+
+shearX(45);
+
+Checkpoint 3 Passed
+3.
+Above the second for loop, horizontally shear the blue rectangles by -15 degrees.
+
+
+Hint
+The syntax to shear a shape along the x-axis is:
+
+shearX(angle);
+
+Checkpoint 4 Passed
+4.
+Above the last for loop, vertically shear the purple rectangles by a value of frameCount / 25 degrees.
+
+
+Hint
+The syntax to shear a shape along the y-axis is:
+
+shearY(angle);
+
+sketch.js
+---------
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  noStroke();
+}
+
+function draw() {
+  background(0);
+  rectMode(CENTER);
+
+  // TODO: Specify angle mode to be in degrees
+  angleMode(DEGREES);
+
+  // RED: First Pattern
+  // TODO: Horiontally shear the pattern by 15 degrees
+  shearX(15);
+  for (let i = 0; i < width; i += 75) {
+    for (let j = 0; j < height; j += 75) {
+      fill(255, 0, 0, 180);
+      rect(i, j, 50, 50);
+    }
+  }
+
+  // BLUE: Second Pattern
+  // TODO: Horiontally shear the pattern by -15 degrees
+  shearX(-15);
+  for (let i = 0; i < width; i += 75) {
+    for (let j = 0; j < height; j += 75) {
+      fill(0, 0, 255, 180);
+      rect(i, j, 50, 50);
+    }
+  }
+
+  // PURPLE: Third Pattern
+  // TODO: Vertically shear the pattern by frameCount/25
+  shearY(frameCount / 25);
+  for (let i = 0; i < width * 2; i += 75) {
+    for (let j = 0; j < height * 2; j += 75) {
+      fill(200, 0, 255, 180);
+      rect(i, j, 50, 50);
+    }
+  }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
