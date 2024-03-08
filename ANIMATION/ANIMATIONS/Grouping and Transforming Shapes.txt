@@ -741,6 +741,141 @@ function draw() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Push and Pop
+--------------
+5 min
+Isolating transformations is very helpful when you have multiple elements that you want to transform individually on a canvas. As we have learned, all transformation functions 
+accumulate—this is where the push() and pop() functions come in handy. By surrounding code blocks with the push() and pop() functions, you can isolate transformations to be applied to 
+targeted elements and not affect any elements that come after it.
+
+The push() function saves the current style settings and transformations, while pop() restores it back to the original settings.
+
+The example code below shows how the push() and pop() functions can be used to contain style and transformation functions for a particular shape:
+
+push(); 
+translate(30,50);
+fill(255, 0, 0);
+rect(0, 0, 100, 100);
+pop();
+
+Keep in mind that every push() needs a pop()! Also notice how the push() function always comes before the pop(). Sandwiched in-between push() and pop() are any style and transformation 
+functions intended for one shape, but not for another.
+
+Notice in pushpop.js on the right, we are able to isolate all three rectangles using push() and pop().
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Open sketch.js.
+
+Isolate the code block for the yellow spiral using the push() and pop() functions.
+
+The code for the yellow spiral starts at the line:
+
+translate(yellowX, yellowY);
+
+and ends after the first for loop.
+
+Notice how both yellow and blue spirals rotate at the center of the canvas!
+
+
+Hint
+You can isolate a block of code by writing the push() function at the beginning and the pop() function at the end.
+
+Make sure to call the pop() function after the closing brackets for the first for loop.
+
+Checkpoint 2 Passed
+2.
+Now, isolate the code block for the blue spiral. Even though encasing the code for the yellow spiral is enough to keep both spirals rotate at the center of the canvas, it is best practice 
+to isolate code blocks that use transformation functions to prevent shapes added on later to the canvas from being affected.
+
+The code for the blue spiral starts at the line:
+
+translate(blueX, blueY);
+
+and ends after the second for loop.
+
+
+Hint
+You can isolate a block of code by writing the push() function at the beginning and the pop() function at the end.
+
+sketch.js
+---------
+let yellowX, yellowY;
+let blueX, blueY;
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+
+  yellowX = width / 2;
+  yellowY = height / 2;
+
+  blueX = width / 2;
+  blueY = height / 2;
+
+  strokeWeight(5);
+}
+
+function draw() {
+  background(255, 10);
+
+  // TODO: Add push and pop to isolate the yellow spiral
+  push();
+  translate(yellowX, yellowY); // Start of code for yellow spiral
+  rotate(frameCount * 0.001);
+  stroke(255, 255, 0, 30);
+  for (let i = 0; i < 24; i++) {
+    rotate(PI / 12);
+    line(0, 0, 0, 160);
+  } // End of code for yellow spiral
+  pop();
+  
+  // TODO: Add push and pop to isolate the blue spiral
+  push();
+  translate(blueX, blueY); // Start of code for blue spiral
+  rotate(frameCount * 0.001 + PI / 8);
+  stroke(0, 0, 255, 30);
+  for (let i = 0; i < 24; i++) {
+    rotate(PI / 12);
+    line(0, 0, 0, 240);
+  } // End of code for blue spiral
+  pop();
+
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
